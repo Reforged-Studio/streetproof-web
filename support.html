@@ -58,8 +58,8 @@
     display: flex; align-items: center; justify-content: space-between;
   }
   .brand { display: flex; align-items: center; gap: 14px; }
-  .brand img { width: 48px; height: 48px; border-radius: 11px; object-fit: cover; }
-  .brand .wordmark { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+  .brand img { width: 56px; height: 56px; border-radius: 13px; object-fit: cover; }
+  .brand .wordmark { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
   .pill-tabs {
     display: inline-flex;
     background: var(--sp-surface);
@@ -113,6 +113,20 @@
         rgba(0,0,0,0.32) 0%,
         rgba(0,0,0,0.88) 60%,
         black 100%);
+  }
+  /* On wide screens, fade out the edges of the entire watermark so it
+     doesn't bleed past the content column visually */
+  .hero-watermark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right,
+        var(--sp-black) 0%,
+        transparent 8%,
+        transparent 92%,
+        var(--sp-black) 100%);
+    pointer-events: none;
   }
   .road {
     stroke: rgba(255, 255, 255, 0.16);
