@@ -82,7 +82,6 @@
     overflow: hidden;
     margin-bottom: 24px;
     border-bottom: 1px solid var(--sp-hairline);
-    max-height: 280px;
   }
   .hero::after {
     content: "";
@@ -93,8 +92,8 @@
     background: linear-gradient(
       to right,
       var(--sp-black) 0%,
-      transparent 25%,
-      transparent 75%,
+      transparent 12%,
+      transparent 88%,
       var(--sp-black) 100%
     );
   }
@@ -104,15 +103,12 @@
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
-    max-height: 280px;
   }
   .hero-watermark svg {
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    max-height: 280px;
     display: block;
   }
   .hero-watermark .map-layer {
@@ -419,7 +415,7 @@
   <section class="hero">
     <!-- Static watermark — same grid + route, no animation. Pure brand thread. -->
     <div class="hero-watermark" aria-hidden="true">
-      <svg viewBox="0 0 1600 360" preserveAspectRatio="xMidYMid slice">
+      <svg viewBox="0 0 1600 360" preserveAspectRatio="xMidYMid meet">
         <g class="map-layer">
           <line class="road" x1="-20" y1="60"  x2="1620" y2="60"/>
           <line class="road" x1="-20" y1="150" x2="1620" y2="150"/>
